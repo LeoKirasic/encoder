@@ -30,8 +30,7 @@ const Encoder = (props) => {
     return <div>You must be logged in to view this page</div>;
   } else {
     return (
-      <div className='Encoder'>
-        <div>{encoded}</div>
+      <div className='encoder'>
         <form onSubmit={handleSubmit}>
           <label htmlFor='text'>Text:</label>
           <input
@@ -41,6 +40,7 @@ const Encoder = (props) => {
           />
           <input type='submit' className='button' />
         </form>
+        <div className='encoder-output'>{encoded}</div>
       </div>
     );
   }
