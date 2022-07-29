@@ -1,6 +1,9 @@
 const validatePassword = (password) => {
-    const regex = /^(?=.*[0-9])[a-zA-Z0-9]{6,}$/;
-    return regex.test(password);
+    if (password.length >= 6 && password.match(/\d/)) {
+        return true;
+    } else {
+        return false;
+    }
   };
 
 export default validatePassword;
