@@ -9,9 +9,6 @@ const encoder = require('./encoder');
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('express here')
-})
 app.post('/login', login);
 
 app.post('/encoder', auth, (req, res) => {
