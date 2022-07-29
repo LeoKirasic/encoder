@@ -34,8 +34,12 @@ const Encoder = (props) => {
         <div>{encoded}</div>
         <form onSubmit={handleSubmit}>
           <label htmlFor='text'>Text:</label>
-          <input type='text' onChange={handleTextChange} />
-          <input type='submit' />
+          <input
+            type='text'
+            onChange={handleTextChange}
+            className='text-input'
+          />
+          <input type='submit' className='button' />
         </form>
       </div>
     );

@@ -44,10 +44,11 @@ const Login = (props) => {
   };
 
   return (
-    <div className='Login'>
+    <div className='login'>
       <form onSubmit={handleSubmit}>
         <label htmlFor='email'>Email</label>
         <input
+          className='text-input'
           type='email'
           name='email'
           value={email}
@@ -56,13 +57,14 @@ const Login = (props) => {
         />
         <label htmlFor='password'>Password</label>
         <input
+          className='text-input'
           type='password'
           name='password'
           value={password}
           onChange={passwordOnChange}
           required
         />
-        <input type='submit'></input>
+        <input type='submit' className='button'></input>
       </form>
     </div>
   );
