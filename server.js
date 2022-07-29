@@ -15,10 +15,10 @@ app.get('/', (req, res) => {
 app.post('/login', login);
 
 app.post('/encoder', auth, (req, res) => {
-    const  str  = req.body.text;
+    const str  = req.body.text;
     const result = encoder(str);
 
-    res.json(result)
+    res.json(result);
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
