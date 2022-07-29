@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import isFormValid from '../helpers/isFormValid';
 
 const Login = (props) => {
   const [email, setEmail] = React.useState('');
@@ -34,7 +35,12 @@ const Login = (props) => {
         console.error('Login failed');
       }
     };
-    login();
+
+    if (isFormValid(email, password)) {
+      login();
+    } else {
+      console.error('Form validation failed');
+    }
   };
 
   return (
@@ -42,17 +48,19 @@ const Login = (props) => {
       <form onSubmit={handleSubmit}>
         <label htmlFor='email'>Email</label>
         <input
-          type='text'
+          type='email'
           name='email'
           value={email}
           onChange={emailOnChange}
+          required
         />
         <label htmlFor='password'>Password</label>
         <input
-          type='text'
+          type='password'
           name='password'
           value={password}
           onChange={passwordOnChange}
+          required
         />
         <input type='submit'></input>
       </form>
